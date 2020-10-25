@@ -1,2 +1,28 @@
 
 {% extends 'base.html' %}
+
+ {% load static %}
+ <div class="row slick-carousel" data-slick='{"slidesToShow": 4, "responsive":[{"breakpoint": 1024,"settings":{"slidesToShow": 2}}, {"breakpoint": 768,"settings":{"slidesToShow": 1}}]}'>
+             {% for x in data %}
+                <div class="slick-slide-item">
+                    <div class="team-1">
+                        <div class="photo">
+                            <a href="#">
+                                <img src="{{ x.photo.url }}" alt="team-1" class="img-fluid">
+                            </a>
+                            <div class="social-list clearfix">
+                                <a href="{{ x.facebook_link }}" class="facebook-bg"><i class="fa fa-facebook"></i></a>
+                                <a href="{{ x.Twitter_link }}" class="twitter-bg"><i class="fa fa-twitter"></i></a>
+                                <a href="{{ x.google_plus_link}}" class="google-bg"><i class="fa fa-google"></i></a>
+                            </div>
+                        </div>
+                        <div class="details">
+                            <h4><a href="team-detail.html">{{ x.fristname }}</a></h4>
+                            <h5>{{ x.designation }}</h5>
+                        </div>
+                    </div>
+                </div>
+           {% endfor %}
+
+
+                 </div>

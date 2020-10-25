@@ -8,7 +8,8 @@ def home(request):
 
     return render(request,'page/home.html',{'data':team})
 def about(request):
-    return render(request,'about.html')
+    team = Team.objects.all()
+    return render(request,'about.html',{'data':team})
 def services(request):
     return render(request,'services.html')
 def contact(request):
